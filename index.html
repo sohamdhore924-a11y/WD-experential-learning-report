@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings Panel</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#121212;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* Panel Box */
+.panel{
+    width:320px;
+    background:#1e1e1e;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+    color:white;
+}
+
+/* Title */
+.panel h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* Setting Item */
+.setting{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0;
+}
+
+/* Toggle Switch */
+.switch{
+    position:relative;
+    width:40px;
+    height:20px;
+}
+
+.switch input{
+    display:none;
+}
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    background:#555;
+    border-radius:20px;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transition:0.3s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    height:16px;
+    width:16px;
+    background:white;
+    border-radius:50%;
+    top:2px;
+    left:2px;
+    transition:0.3s;
+}
+
+/* Active Toggle */
+input:checked + .slider{
+    background:#4caf50;
+}
+
+input:checked + .slider:before{
+    transform:translateX(20px);
+}
+
+/* Dropdown */
+select{
+    background:#2c2c2c;
+    border:none;
+    color:white;
+    padding:5px;
+    border-radius:5px;
+}
+
+/* Button */
+button{
+    width:100%;
+    padding:10px;
+    margin-top:20px;
+    border:none;
+    border-radius:8px;
+    background:#4caf50;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#45a049;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="panel">
+
+<h2>Settings</h2>
+
+<div class="setting">
+<span>Dark Mode</span>
+
+<label class="switch">
+<input type="checkbox" checked>
+<span class="slider"></span>
+</label>
+
+</div>
+
+<div class="setting">
+<span>Notifications</span>
+
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+
+</div>
+
+<div class="setting">
+<span>Language</span>
+
+<select>
+<option>English</option>
+<option>Hindi</option>
+<option>Marathi</option>
+</select>
+
+</div>
+
+<button>Save Settings</button>
+
+</div>
+
+</body>
+</html>
